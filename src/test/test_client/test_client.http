@@ -1,0 +1,36 @@
+@product_host=localhost:8080
+@inventory_host=localhost:8082
+@apigateway_host=localhost:9000
+### test product direct
+GET http://{{product_host}}/api/product
+
+### test product via gateway
+GET http://{{apigateway_host}}/api/product
+
+
+### Test Inventory direct
+GET http://{{inventory_host}}/api/inventory?skuCode=iphone_15&quantity=10 HTTP/1.1
+
+
+### Test Inventory via gateway
+POST http://{{apigateway_host}}//api/inventory?skuCode=iphone_15&quantity=10 HTTP/1.1
+
+### Test Order direct
+POST http://order:8081/api/order HTTP/1.1
+content-type: application/json
+
+{
+    "skuCode": "iphone_15",
+    "price": "11.22",
+    "quantity": 2
+}
+
+### Test Order via gateway
+POST http://{{apigateway_host}}/api/order HTTP/1.1
+content-type: application/json
+
+{
+    "skuCode": "iphone_15",
+    "price": "11.22",
+    "quantity": 2
+}
