@@ -39,7 +39,8 @@
 				"formulahendry.vscode-mysql",
 				"humao.rest-client",
 				"GitHub.vscode-github-actions",
-				"vscjava.vscode-java-test"
+				"vscjava.vscode-java-test",
+				"Postman.postman-for-vscode"
 			]
 		}
 	}
