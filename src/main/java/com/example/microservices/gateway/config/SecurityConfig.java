@@ -14,7 +14,9 @@ public class SecurityConfig {
             "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**",
             "/swagger-resources/**", "/api-docs/**",
             // gateway swagger aggregation uri
-            "/aggregate/**"
+            "/aggregate/**",
+            // observation uri
+            "/actuator/prometheus"
     };
 
     @Bean
